@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Liquid Morphism Reference Palette (Light) */
+    --background: 40 40% 96%;
+    --foreground: 220 60% 10%;
+
+    --primary: 220 80% 15%;
+    --primary-foreground: 40 40% 96%;
+
+    --accent: 260 80% 60%;
+    /* Vibrant Purple */
+    --accent-secondary: 190 90% 50%;
+    /* Vibrant Cyan */
+
+    --card: 0 0% 100% / 0.4;
+    --card-border: 0 0% 100% / 0.6;
+
+    --radius: 2rem;
+  }
+
+  .dark {
+    --background: 240 20% 4%;
+    --foreground: 40 40% 96%;
+
+    --primary: 40 40% 96%;
+    --primary-foreground: 240 20% 4%;
+
+    --card: 240 20% 10% / 0.4;
+    --card-border: 240 20% 20% / 0.5;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+    @apply tracking-tight font-medium;
+  }
+}
+
+@layer utilities {
+
+  /* Ultra-Premium Glass 3.0 */
+  .glass-premium {
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.1) 100%);
+    backdrop-filter: blur(40px) saturate(250%) contrast(110%);
+    -webkit-backdrop-filter: blur(40px) saturate(250%) contrast(110%);
+    border: 1px solid var(--card-border);
+    box-shadow:
+      0 8px 32px 0 rgba(31, 38, 135, 0.07),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-premium {
+    background: linear-gradient(135deg,
+        rgba(20, 20, 25, 0.4) 0%,
+        rgba(10, 10, 15, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Iridescent Liquid Mesh Background */
+  .liquid-mesh-vibrant {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--background);
+    overflow: hidden;
+  }
+
+  .liquid-mesh-vibrant::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    background:
+      radial-gradient(circle at 20% 30%, hsla(190, 90%, 50%, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, hsla(260, 80%, 60%, 0.15) 0%, transparent 40%),
+      radial-gradient(circle at 40% 80%, hsla(220, 80%, 20%, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 70% 70%, hsla(330, 90%, 50%, 0.1) 0%, transparent 40%);
+    filter: blur(100px);
+    animation: mesh-float 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes mesh-float {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+
+    100% {
+      transform: rotate(5deg) scale(1.1);
+    }
+  }
+
+  /* Iridescent Blob Animation */
+  .blob-float {
+    animation: blob-bounce 10s ease-in-out infinite;
+  }
+
+  @keyframes blob-bounce {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-30px) rotate(5deg);
+    }
+  }
+
+  .text-gradient-premium {
+    background: linear-gradient(to bottom right, hsl(var(--foreground)), hsl(var(--primary) / 0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-capsule {
+    @apply flex items-center gap-8 px-8 py-3 rounded-full glass-premium border border-white/40;
+  }
+}
