@@ -54,7 +54,7 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid lg:grid-cols-12 gap-8 items-stretch">
             {/* Left Card: Data Engineering */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
