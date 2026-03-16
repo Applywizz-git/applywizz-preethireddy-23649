@@ -45,7 +45,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-accent/20 blur-[120px] rounded-full scale-110 group-hover:scale-125 transition-transform duration-1000" />
                 <div className="relative h-full w-full rounded-[4rem] overflow-hidden glass-premium p-4">
                   <img
-                    src="/preethi_hero_portrait.png"
+                    src="/preethi_profile.jpg"
                     alt="Preethi Ravula"
                     className="w-full h-full object-cover rounded-[3rem] grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
                   />
