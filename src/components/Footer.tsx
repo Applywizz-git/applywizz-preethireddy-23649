@@ -23,8 +23,8 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/preethi-r-984a09208/', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/preethi-rav/ai-chatbot-platform', label: 'GitHub' },
     { icon: Mail, href: 'mailto:preethi.reddy.rav@gmail.com', label: 'Email' },
   ];
 

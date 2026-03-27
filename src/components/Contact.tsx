@@ -104,14 +104,20 @@ const Contact = () => {
                 "The best way to predict the future is to invent it."
               </p>
               <div className="flex justify-center gap-8">
-                {[Linkedin, Github, Mail].map((Icon, i) => (
+                {[
+                  { Icon: Linkedin, href: 'https://www.linkedin.com/in/preethi-r-984a09208/' },
+                  { Icon: Github, href: 'https://github.com/preethi-rav/ai-chatbot-platform' },
+                  { Icon: Mail, href: 'mailto:preethi.reddy.rav@gmail.com' }
+                ].map((social, i) => (
                   <motion.a
                     key={i}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ y: -5, scale: 1.2 }}
                     className="w-14 h-14 rounded-full border border-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-white transition-all shadow-xl"
                   >
-                    <Icon className="w-6 h-6" />
+                    <social.Icon className="w-6 h-6" />
                   </motion.a>
                 ))}
               </div>

@@ -23,7 +23,7 @@ const Hero = () => {
                 PREETHI <br /> RAVULA
               </h1>
               <div className="flex items-center gap-6">
-                <span className="text-2xl md:text-3xl font-heading text-accent italic">Cloud Data Engineer.</span>
+                <span className="text-2xl md:text-3xl font-heading text-accent italic">Data Engineer.</span>
                 <div className="h-px w-24 bg-accent/30" />
               </div>
               <div className="mt-8 max-w-2xl">

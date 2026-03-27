@@ -11,6 +11,7 @@ const Certifications = () => {
       issuer: 'AWS - Associate (DEA-C01)',
       description: 'Validation of skills in data ingestion, transformation, and security on AWS.',
       icon: Cloud,
+      link: 'https://www.credly.com/badges/b327637f-85b5-4f02-a8b9-e5921179d8bb/public_url',
     },
     {
       title: 'IBM Data Engineering',
@@ -55,7 +56,7 @@ const Certifications = () => {
         >
           <span className="text-accent font-heading font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Validation</span>
           <h2 className="text-6xl md:text-7xl font-heading mb-6 text-foreground tracking-tighter">
-            Certifications & <span className="text-accent italic">Credentials</span>
+            Certifications
           </h2>
           <div className="w-24 h-1.5 bg-accent/20 mx-auto rounded-full relative overflow-hidden">
             <motion.div
@@ -84,22 +85,29 @@ const Certifications = () => {
                   <div className="relative w-20 h-20 rounded-2xl bg-accent/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
                     <cert.icon className="w-10 h-10 text-accent" />
                   </div>
-                  <h3 className="font-heading text-xl mb-3 text-foreground leading-tight tracking-tight">{cert.title}</h3>
+                  <h3 className="font-heading text-xl mb-3 text-foreground leading-tight tracking-tight">
+                    {cert.link ? (
+                      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                        {cert.title}
+                      </a>
+                    ) : cert.title}
+                  </h3>
                   <p className="text-accent font-bold text-[10px] tracking-widest uppercase">{cert.issuer}</p>
                 </div>
 
                 {/* Back Side */}
-                <div className="absolute inset-0 backface-hidden rotate-y-180 glass-premium border-accent/30 rounded-[3rem] p-10 flex flex-col justify-between overflow-hidden shadow-2xl">
-                  <div className="relative z-10">
-                    <h3 className="font-heading text-xl mb-4 text-accent tracking-tight">{cert.title}</h3>
+                <div className="absolute inset-0 backface-hidden rotate-y-180 glass-premium border-accent/30 rounded-[3rem] p-10 flex flex-col justify-center overflow-hidden shadow-2xl">
+                  <div className="relative z-10 text-center">
+                    <h3 className="font-heading text-xl mb-4 text-accent tracking-tight">
+                      {cert.link ? (
+                        <a href={cert.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                          {cert.title}
+                        </a>
+                      ) : cert.title}
+                    </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed font-light">
                       {cert.description}
                     </p>
-                  </div>
-
-                  <div className="relative z-10 flex items-center space-x-2 text-accent group-hover:translate-x-1 transition-transform">
-                    <span className="text-[10px] font-bold uppercase tracking-widest">Verified Credential</span>
-                    <ExternalLink className="w-4 h-4" />
                   </div>
                 </div>
               </motion.div>
